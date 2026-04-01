@@ -4,7 +4,9 @@ import { Play, Loader2, Video, Clock, User, Eye, Download, Wifi, WifiOff } from 
 import axios from 'axios';
 import './App.css';
 
-const API = 'http://localhost:5000/api';
+// const API = 'http://localhost:5000/api';
+// At the top of App.tsx, replace the API constant
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 interface VideoQuality {
   quality: number;
