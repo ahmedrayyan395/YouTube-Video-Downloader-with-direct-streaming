@@ -37,7 +37,7 @@ CORS(app, resources={
 # Health check
 # ─────────────────────────────────────────────────────────
 
-@app.route('/api/health', methods=['GET'])
+@app.route('/health', methods=['GET'])
 def health():
     ffmpeg_ok = shutil.which('ffmpeg') is not None
     return jsonify({
@@ -47,7 +47,7 @@ def health():
     })
 
 
-@app.route('/api/ad/status', methods=['GET'])
+@app.route('/ad/status', methods=['GET'])
 def ad_status():
     return jsonify({'ads_enabled': False, 'provider': 'google', 'message': 'Ad integration ready'})
 
@@ -56,7 +56,7 @@ def ad_status():
 # Video info
 # ─────────────────────────────────────────────────────────
 
-@app.route('/api/video-info', methods=['POST', 'OPTIONS'])
+@app.route('/video-info', methods=['POST', 'OPTIONS'])
 def video_info():
     if request.method == 'OPTIONS':
         return '', 200
@@ -117,7 +117,7 @@ def video_info():
 # Core: stream video bytes straight to browser
 # ─────────────────────────────────────────────────────────
 
-@app.route('/api/stream', methods=['GET'])
+@app.route('/stream', methods=['GET'])
 def stream_video():
     """
     Runs yt-dlp with -o - (stdout output) and pipes chunks
@@ -197,7 +197,7 @@ def stream_video():
 # for the stream to start.
 # ─────────────────────────────────────────────────────────
 
-@app.route('/api/stream-progress', methods=['GET'])
+@app.route('/stream-progress', methods=['GET'])
 def stream_progress():
     """
     SSE endpoint.  Runs yt-dlp in --simulate mode (no download)
