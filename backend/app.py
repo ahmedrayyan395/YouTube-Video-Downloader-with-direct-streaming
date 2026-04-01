@@ -285,8 +285,8 @@ if __name__ == '__main__':
     print("  Zero server storage used.")
     print(f"  ffmpeg : {'✓  ' + ffmpeg if ffmpeg else '✗  Not found (install for 1080p+)'}")
     print("=" * 55)
-    app.run(debug=True, port=5000, host='127.0.0.1', threaded=True)
+    # app.run(debug=True, port=5000, host='127.0.0.1', threaded=True)
     
      # Get port from environment variable (for Render)
-    # port =5000
-    # app.run(debug=False, host='0.0.0.0', port=port)
+    port =5000
+    app.run(debug=False, host='0.0.0.0', port=port)
