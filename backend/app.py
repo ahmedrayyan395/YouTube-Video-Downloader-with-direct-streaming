@@ -24,14 +24,13 @@ from flask_cors import CORS
 import yt_dlp
 
 app = Flask(__name__)
-CORS(app, resources={
-    r"/api/*": {
-        "origins": ["http://localhost:5173", "http://127.0.0.1:5173"],
-        "methods": ["GET", "POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
-    }
-})
-
+CORS(app, origins=[
+    "http://localhost:5173",
+    "http://localhost:3000", 
+    "https://raahmed395.pythonanywhere.com",
+    "https://you-tube-video-downloader-with-dire.vercel.app/",  # Add your frontend URL
+    "*"  # Allow all for testing (remove in production)
+])
 
 # ─────────────────────────────────────────────────────────
 # Health check
@@ -285,8 +284,8 @@ if __name__ == '__main__':
     print("  Zero server storage used.")
     print(f"  ffmpeg : {'✓  ' + ffmpeg if ffmpeg else '✗  Not found (install for 1080p+)'}")
     print("=" * 55)
-    # app.run(debug=True, port=5000, host='0.0.0.0', threaded=True)
+    app.run(debug=True, port=5000, host='127.0.0.1', threaded=True)
     
      # Get port from environment variable (for Render)
-    port =5000
-    app.run(debug=False, host='0.0.0.0', port=port)
+    # port =5000
+    # app.run(debug=False, host='0.0.0.0', port=port)

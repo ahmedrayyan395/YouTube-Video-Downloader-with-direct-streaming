@@ -6,7 +6,8 @@ import './App.css';
 
 // const API = 'http://localhost:5000/api';
 // At the top of App.tsx, replace the API constant
-const API = 'https://raahmed395.pythonanywhere.com';
+// const API = 'https://raahmed395.pythonanywhere.com';
+const API = ' https://b6cc-197-35-240-138.ngrok-free.app';
 
 interface VideoQuality {
   quality: number;
