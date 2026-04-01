@@ -28,7 +28,8 @@ CORS(app, origins=[
     "http://localhost:5173",
     "http://localhost:3000", 
     "https://raahmed395.pythonanywhere.com",
-    "https://you-tube-video-downloader-with-dire.vercel.app/",  # Add your frontend URL
+    "https://you-tube-video-downloader-with-dire.vercel.app/",
+      " https://b6cc-197-35-240-138.ngrok-free.app",  # Add your frontend URL
     "*"  # Allow all for testing (remove in production)
 ])
 
